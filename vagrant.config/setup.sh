@@ -21,11 +21,8 @@ sudo yum install -y http://dev.mysql.com/get/mysql-community-release-el6-5.noarc
 sudo yum install -y mysql mysql-server
 sudo service mysqld start
 sudo chkconfig mysqld on
-
-# mysql セットアップ
-# Qiita記事参考の上、mysqlの初期設定を完了すること
-# @See: http://qiita.com/knife0125/items/3d685f1368a654d5187d
 sudo mysql_secure_installation
+sudo cp -f /vagrant/vagrant.config/my.cnf /etc/my.cnf
 
 # php5.6
 sudo rpm -Uvh http://ftp.iij.ad.jp/pub/linux/fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm
@@ -51,9 +48,9 @@ sudo mkdir /var/log/nginx/log
 sudo chown nginx /var/log/nginx/log
 sudo chmod 750 /var/log/nginx/log/
 
-# ssl設定
-# Qiita記事参考の上、オレオレ証明書を発行すること
-# @See: http://qiita.com/duke-gonorego/items/afbbcd7044d3da178723
+# ssl
+sudo cp /vagrant/vagrant.config/ssl/server.* /etc/nginx/conf.d/
 
+# restart
 sudo service nginx start
 sudo chkconfig nginx on

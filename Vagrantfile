@@ -6,4 +6,6 @@ Vagrant.configure(2) do |config|
   config.vm.network "private_network", ip: "192.168.33.18"
   config.vm.hostname = "laravel-wp-test.local"
   config.vm.synced_folder "./", "/vagrant/", mount_options: ['dmode=777', 'fmode=777']
+
+  #config.vm.provision :shell, :path => "vagrant.config/setup.sh"
 end
