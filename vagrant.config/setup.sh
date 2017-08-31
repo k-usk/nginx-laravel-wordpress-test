@@ -24,6 +24,13 @@ sudo chkconfig mysqld on
 sudo mysql_secure_installation
 sudo cp -f /vagrant/vagrant.config/my.cnf /etc/my.cnf
 
+# DB for WP
+#mysql -uroot <<EOF
+#CREATE USER wp_user@localhost IDENTIFIED BY 'wp_passwd';
+#CREATE DATABASE wp_db;
+#GRANT ALL PRIVILEGES ON wp_db.* TO wp_user@localhost;
+#EOF
+
 # php5.6
 sudo rpm -Uvh http://ftp.iij.ad.jp/pub/linux/fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm
 sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
@@ -54,3 +61,4 @@ sudo cp /vagrant/vagrant.config/ssl/server.* /etc/nginx/conf.d/
 # restart
 sudo service nginx start
 sudo chkconfig nginx on
+sudo service php-fpm start

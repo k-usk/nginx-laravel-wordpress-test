@@ -25,9 +25,7 @@ MySQLの設定部分でいくつか設定を聞かれるので答える。
 ..
 Enter current password for root (enter for none):  //そのままEnter
 ..
-Set root password? [Y/n] Y  //rootパスワードをセット
-New password:   //パスワードの入力
-Re-enter new password:   //再入力
+Set root password? [Y/n] n  //rootパスワードをセット
 ..
 Remove anonymous users? [Y/n] Y   //誰でもログイン出来る設定を削除
 ..
@@ -39,8 +37,11 @@ Reload privilege tables now? [Y/n] Y   //即反映
 ..
 ```
 
-パスワードの設定以外は全て`Y`で。
+パスワードの設定以外は全て`Y`で。  
+ルートのパスワードはあくまでもローカル環境なので設定していない。
 
 SSLの参考 : [nginxでオレオレSSLを設定する - Qiita](http://qiita.com/duke-gonorego/items/afbbcd7044d3da178723)
+
+## Wordpress
 
 
