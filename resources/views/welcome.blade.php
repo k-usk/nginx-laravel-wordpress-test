@@ -33,12 +33,20 @@
             .title {
                 font-size: 96px;
             }
+            li{
+                list-style: none;
+                margin-bottom: 10px;
+            }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="content">
                 <div class="title">Laravel 5</div>
+                <ul>
+                    <li><a href="/about/">ABOUT</a></li>
+                    <li><a href="/inquiry">FORM</a></li>
+                </ul>
             </div>
         </div>
     </body>

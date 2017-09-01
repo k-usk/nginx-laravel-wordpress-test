@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/inquiry', 'InquiryController@input');
+Route::get('/about', 'PageController@about');
